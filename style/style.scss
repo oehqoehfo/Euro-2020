@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
+/**General**/
+body,html{
+    margin:0;
+    padding:0;
+}
+body{
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+*{
+    box-sizing:border-box;
+}
+a{
+    text-decoration:none;
+    color:black;
+}
+/**Header*/
+#Header h1{
+    font-family: 'Mr Dafoe', cursive;
+}
+#Header{
+    padding:0px 20px;
+    position:relative;
+    h1{
+        margin:0;
+    }
+}
+.absoluteCenter{
+    right:50%;
+    top:50%;
+    transform:translate(50%,-50%);
+    position:absolute;
+}
+/**Main**/
+#Main{
+    height:400px;
+    background-position:center;
+    background-size:cover;
+    background-image:url('../image/football-1331838_1280.jpg');
+    color:#fff;
+    position:relative;
+    text-align:center;
+    text-transform:uppercase;
+    filter:brightness(0.8);
+    letter-spacing:0.5px;
+    font-size:20px;
+    .absoluteCenter{
+        width:80%;
+    }
+    h1{
+        margin:0;
+        color:#fff;
+        text-shadow:1px 1px black;
+    }
+    
+}
+
+/**LINK*/
+.home #Main a{
+    background-color:white;
+}
+.home #Main a, .home #Contents a{
+    font-size:18px;
+    margin:20px;
+    padding:15px;
+    border-radius:5px;
+    outline:none;
+    border:none;
+    display:inline-block;
+}
+#Contents a{
+    background-color:rgba(0,65,194,0.9);
+    color:#fff;
+    text-transform:uppercase;
+}
+/**Menu**/
+#Hamburger+nav{
+    text-transform:uppercase;
+    height:0px;
+    transition:height 0.3s;
+    overflow-y:hidden;
+    position:absolute;
+    z-index:10;
+    left:0;
+    background-color:#fff;
+    width:100vw;
+}
+#Menu ul{
+    margin:0;
+}
+li{
+    list-style:none;
+}
+#Hamburger.toggled+nav{
+    height:200px;
+    display:flex;
+    flex-direction:column;
+    ul{
+        height:100%;
+    }
+    li{
+        height:25%;
+        line-height:50px;
+    }
+}
+#Hamburger+nav li{
+    font-size:22px;
+}
+/*Hamburger Menu Icon*/
+#Hamburger{
+    position:absolute;
+    top:50%;
+    right:20px;
+    transform:translate(0,-50%);
+}
+#Hamburger span{
+    display:block;
+    background-color:#000;
+    height:3.5px;
+    width:20px;
+    margin-bottom:3px;
+}
+/*CONTENTS*/
+#Contents{
+    text-align:center;
+    h2{
+        text-transform:uppercase;
+    }
+
+}
+.home{
+    #Contents{
+        >*{
+            padding:10px;
+            &:nth-child(even){
+                background-color:#000;
+                color:#fff;
+                a{
+                    background-color:#fff;
+                    color:#000;
+                }
+            }
+        }
+        p{
+            font-size:18px;
+        }
+        .groups{
+            flex-basis:33%;
+            text-align:left;
+            display:inline-block;
+            margin-bottom:10px;
+            border-radius:5px;
+            box-shadow:1px 1px lightgrey;
+            p{
+                font-size:12px;
+                display:flex;
+                background-color:rgba(72,138,199,0.4);
+                margin:0;
+                padding-top:5px;
+                >*{
+                    &:first-child{
+                        text-align:right;
+                        width:45%;
+                    }
+                    &:last-child{
+                        line-height:30px;
+                        width:55%;
+                    }
+                }
+                &:last-of-type{
+                    padding-bottom:5px;
+                    border-radius:0 0 5px 5px;
+                }
+            }
+            img{
+                margin-right:5px;
+            }
+            h2{
+                text-align:center;
+                background-color:rgba(0,65,194,0.9);
+                margin:0;
+                padding:5px;
+                font-weight:normal;
+                color:#fff;
+                border-radius:5px 5px 0 0;
+            }
+        }
+    }
+    .groupList{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-between;
+    }
+}
+
+
+/*FOOTER*/
+footer{
+    background-color:#eeeeee;
+    padding:1em;
+    ul,h3{
+        margin-top:0;
+    }
+    ul{
+        padding:0;
+    }
+    li{
+        margin-bottom:1em;
+    }
+}
+
+/*IMG*/
+.home .groups img{
+    width:30px;
+    height:30px;
+    vertical-align:middle;
+}
+
+@media (min-width:768px){
+    /*HEADER*/
+    #Header{
+        display:flex;
+    }
+    #Menu{
+        flex-grow:1;
+        ul{
+            display:flex;
+            height:100%;
+            width:100%;
+            justify-content:space-around;
+        }
+        li{
+            display:table;
+            text-align:center;
+            padding:0 5px;
+
+        }
+        a{
+            display:table-cell;
+            vertical-align:middle;
+        }
+    }
+    #Hamburger{
+        display:none;
+        &+nav{
+            height:100%;
+            position:static;
+            transition:none;
+            width:auto;
+        }
+    }
+    /*CONTENTS*/
+    .home #Contents{
+        .groupList{
+            justify-content:space-around;
+        }
+        .groups{
+            flex-basis:30%;
+            margin-bottom:20px;
+            p{
+                font-size:14px;
+            }
+        }
+    }
+
+    /*FOOTER*/
+    footer{
+        text-align:center;
+        font-size:0;
+        >*{
+            display:inline-block;
+            vertical-align:top;
+            width:50%;
+            font-size:20px;
+            padding:5%;
+            &:first-of-type{
+                text-align:right;
+            }
+            &:last-of-type{
+                text-align:left;
+            }
+        }
+        ul{
+            margin-bottom:0;
+        }
+        li{
+            &:last-of-type{
+                margin-bottom:0;
+            }
+        }
+    }
+}
+@media (min-width:992px){
+    /*CONTENTS*/
+    .home #Contents{
+        .groupList{
+            padding:0 10%;
+        }
+        .groups{
+            flex-basis:28%;
+            margin-bottom:25px;
+            p{
+                font-size:16px;
+            }
+        }
+    }
+
+    /*MENU*/
+    #Menu{
+        li{
+            padding:0 20px;
+        }
+    }
+}
+@media (min-width:1200px){
+    /*CONTENTS*/
+    .home{
+        #Contents{
+            .groupList{
+                padding:0 15%;
+            }
+            .groups{
+                flex-basis:26%;
+            }
+        }
+    }
+
+    /*MENU*/
+    #Menu{
+        li{
+            padding:0 25px;
+        }
+    }
+}

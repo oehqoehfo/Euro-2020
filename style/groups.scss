@@ -1,0 +1,170 @@
+/*CONTENT*/
+#Contents{
+    background-color:rgba(229, 228, 226,0.2);
+}
+#Groups{
+    text-align:left;
+    .groups{
+        position:relative;
+        padding-bottom:15px;
+        border-top:1px solid lightgrey;
+        &.collapsed{
+            padding:10px;
+            margin-bottom:25px;
+            .groupInfo{
+                max-height:0;
+                overflow:hidden;
+            }
+        }
+        .groupInfo{
+            margin-top:25px;
+            max-height:4000px;
+            transition:max-height 0.5s ease-in-out;
+            text-align:center;
+        }
+        img{
+            width:60%;
+        }
+    }
+    h3{
+        margin:0;
+        left:5%;
+        transform:translate(0,-50%);
+        position:absolute;
+        top:0;
+    }
+}
+.groupTable{
+    margin:auto;
+}
+.groupTitle{
+    cursor:pointer;
+}
+.match{
+    padding:15px 0;
+    >span{
+        margin:5px;
+        display:block;
+    }
+}
+.country{
+    >*{
+        display:block;
+    }
+    img{
+        margin:auto;
+    }
+    span{
+        margin:5px;
+    }
+    p{
+        margin:0;
+    }
+}
+/*table*/
+thead{
+    th{
+        background-color:rgba(0,65,194,0.9);
+        color:#fff;
+        padding:10px;
+        border-radius:5px 5px 0 0;
+    }
+}
+table{
+    //border-collapse:collapse;
+    border-spacing:0;
+    border-collapse:separate;
+    height:200px;
+    tr{
+        padding:2px;
+        background-color:rgba(72,138,199,0.3);
+        border-bottom:0.1px solid rgba(0,0,0,0.2);
+        &:first-of-type{
+            background-color:rgba(0,65,194,0.7);
+        }
+        &:nth-of-type(2),&:nth-of-type(3){
+            background-color:rgba(72,138,199,0.6);
+        }
+        &:nth-of-type(4){
+            background-color:rgba(72,138,199,0.5);
+        }
+        td{
+            &:first-of-type{
+                padding:0 7px;
+            }
+            &:not(:first-of-type){
+                width:30px;
+                text-align:center;
+            }
+        }
+    }
+}
+tbody{
+    th{
+        font-weight:normal;
+    }
+}
+
+@media(min-width:768px){
+    .groupInfo{
+        >*{
+            display: inline-block;
+            width: 47%;
+            vertical-align: top;
+        }
+    }
+    .match{
+        >div{
+            width:45%;
+        }
+        >div, >span{
+            display:inline-block;
+        }
+        >span{
+            margin:0;
+            vertical-align:middle;
+        }
+        img{
+            height:65px;
+        }
+    }
+    table{
+        position:sticky;
+        top:2%;
+        height:100%;
+        >*{
+            display:table;
+            width:100%;
+        }
+        tr{
+            td{
+                &:first-of-type{
+                    text-align: center;
+                }
+            }
+        }
+    }
+    tbody{
+        tr{
+            height:40px;
+        }
+    }
+}
+
+@media (min-width:992px){
+    #Groups{
+        .groups{
+            img{
+                height:80px;
+            }
+        }
+    }
+    .groupInfo{
+        table{
+            width:42%;
+        }
+    }
+    .groupSchedule{
+        margin-left:1.5%;
+    }
+}
