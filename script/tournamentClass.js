@@ -9,7 +9,6 @@ class tournamentClass{
         for(let i=0;i<totalTournamentRounds;i++){
             activeRound=this.rounds[i];
             matchesInRound=this.tournamentData[i].matches;
-            console.log(matchesInRound);
             for(let j=0;j<matchesInRound.length;j++){
                 matchIndex=j;
                 this.setCountryData(activeRound, matchesInRound[j],matchIndex);
@@ -19,7 +18,6 @@ class tournamentClass{
     }
     setCountryData = function(active, matches,index){
         let homeCountry = active.querySelectorAll('.home .countryName')[index];
-        console.log(active.querySelectorAll('.home .countryName'));
         let awayCountry = active.querySelectorAll('.away .countryName')[index];
         homeCountry.innerText=matches.homeParticipant.participantName;
         awayCountry.innerText=matches.awayParticipant.participantName;

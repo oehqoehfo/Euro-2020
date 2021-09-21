@@ -42,7 +42,6 @@ callFetch('matches','groups').then(data=>{
     }
 });
 function renderMatches(homeParticipant,awayParticipant,dateObject){
-    console.log(homeParticipant);
     const homeParticipantName = homeParticipant.participantName;
     const awayParticipantName = awayParticipant.participantName;
     if(homeParticipantName==='Italy'||homeParticipantName==='Turkey'||homeParticipantName==='Switzerland'||homeParticipantName==='Wales'){
@@ -60,7 +59,6 @@ function renderMatches(homeParticipant,awayParticipant,dateObject){
     }
 }
 function renderMatch(index,home,away,dateObject){
-    console.log(home);
     const scheduleDOM = document.querySelectorAll('.groupSchedule');
     const matches = scheduleDOM[index].firstElementChild.children;
     let homeTeam, awayTeam, homeFlag, awayFlag;
